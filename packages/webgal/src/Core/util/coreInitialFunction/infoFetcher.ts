@@ -3,11 +3,12 @@ import { logger } from '../logger';
 import { assetSetter, fileType } from '../gameAssetsAccess/assetSetter';
 import { getStorage } from '../../controller/storage/storageController';
 import { webgalStore } from '@/store/store';
-import { setGuiAsset, setLogoImage, setThemeConfigItem } from '@/store/GUIReducer';
+import { setGuiAsset, setLogoImage } from '@/store/GUIReducer';
 import { setEbg } from '@/Core/gameScripts/changeBg/setEbg';
 import { initKey } from '@/Core/controller/storage/fastSaveLoad';
 import { WebgalParser } from '@/Core/parser/sceneParser';
 import { WebGAL } from '@/Core/WebGAL';
+import { getFastSaveFromStorage, getSavesFromStorage } from '@/Core/controller/storage/savesController';
 
 declare global {
   interface Window {
@@ -59,11 +60,9 @@ export const infoFetcher = (url: string) => {
           case 'Game_key': {
             WebGAL.gameKey = args[0];
             getStorage();
+            getFastSaveFromStorage();
+            getSavesFromStorage(0, 0);
             break;
-          }
-
-          case 'Textbox_theme': {
-            dispatch(setThemeConfigItem({ key: 'textbox', value: args[0] }));
           }
         }
       });

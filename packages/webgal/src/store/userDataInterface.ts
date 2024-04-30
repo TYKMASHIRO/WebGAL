@@ -29,6 +29,11 @@ export enum voiceOption {
   no,
 }
 
+export enum fullScreenOption {
+  on,
+  off,
+}
+
 /**
  * @interface IOptionData 用户设置数据接口
  */
@@ -46,6 +51,7 @@ export interface IOptionData {
   textboxOpacity: number;
   language: language;
   voiceInterruption: voiceOption; // 是否中断语音
+  fullScreen: fullScreenOption;
 }
 
 /**
@@ -86,8 +92,6 @@ export interface IAppreciation {
  * @interface IUserData 用户数据接口
  */
 export interface IUserData {
-  saveData: Array<ISaveData>; // 用户存档数据
-  quickSaveData: ISaveData | null;
   globalGameVar: IGameVar; // 不跟随存档的全局变量
   optionData: IOptionData; // 用户设置选项数据
   appreciationData: IAppreciation;

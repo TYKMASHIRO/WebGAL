@@ -11,6 +11,7 @@ import {
   ISetOptionDataPayload,
   ISetUserDataPayload,
   IUserData,
+  fullScreenOption,
   playSpeed,
   textFont,
   textSize,
@@ -34,18 +35,17 @@ const initialOptionSet: IOptionData = {
   textboxOpacity: 75,
   language: language.zhCn,
   voiceInterruption: voiceOption.yes,
+  fullScreen: fullScreenOption.off,
 };
 
 // 初始化用户数据
 export const initState: IUserData = {
-  saveData: [],
   optionData: initialOptionSet,
   globalGameVar: {},
   appreciationData: {
     bgm: [],
     cg: [],
   },
-  quickSaveData: null,
 };
 
 const userDataSlice = createSlice({
@@ -124,17 +124,11 @@ const userDataSlice = createSlice({
     setSlPage: (state, action: PayloadAction<number>) => {
       state.optionData.slPage = action.payload;
     },
-    setFastSave: (state, action: PayloadAction<ISaveData | null>) => {
-      state.quickSaveData = action.payload;
-    },
     resetOptionSet(state) {
       Object.assign(state.optionData, initialOptionSet);
     },
     resetAllData(state) {
       Object.assign(state, cloneDeep(initState));
-    },
-    resetSaveData(state) {
-      state.saveData.splice(0, state.saveData.length);
     },
   },
 });
@@ -147,9 +141,7 @@ export const {
   setSlPage,
   unlockCgInUserData,
   unlockBgmInUserData,
-  setFastSave,
   resetOptionSet,
-  resetSaveData,
   resetAllData,
 } = userDataSlice.actions;
 export default userDataSlice.reducer;

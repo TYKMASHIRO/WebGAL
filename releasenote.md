@@ -8,15 +8,15 @@
 
 #### 新功能
 
-从编辑器接受指令
+`-when` 参数使用的条件跳转语句，支持逻辑运算符
+
+在引擎层级支持 Spine 作为立绘
 
 #### 修复
 
-小幅改善 iOS 设备的崩溃状况
+立绘或背景 id 为纯数字时，效果无法被正确应用
 
-优化 Backlog 性能
-
-修复动画模块异常
+存读档卡顿
 
 <!-- English Translation -->
 ## Release Notes
@@ -29,15 +29,15 @@
 
 #### New Features
 
-Accept commands from editor
+Conditional jump statements using the `-when` parameter, supporting logical operators
+
+Spine is supported as figure at the engine level
 
 #### Fixes
 
-Slightly improve crash situation on iOS devices
+Effects cannot be applied correctly when the ID of the figure or background is a pure number
 
-Optimize Backlog performance
-
-Fix abnormal animation module
+Saving and loading stalls
 
 
 <!-- Japanese Translation -->
@@ -51,15 +51,15 @@ Fix abnormal animation module
 
 #### 新機能
 
-エディタからの指示を受け付ける
+`-when` パラメータを使用した条件分岐文、論理演算子に対応
+
+エンジンレベルで Spine を立ち絵としてサポート
 
 #### 修正
 
-iOS デバイスでのクラッシュを若干改善
+立ち絵や背景の id が純粋な数字の場合、エフェクトが正しく適用されない
 
-Backlog のパフォーマンスを最適化
-
-アニメーションモジュールの異常を修正
+セーブデータの読み書きがカクつく
 
 
 <!-- French Translation -->
@@ -73,13 +73,13 @@ Backlog のパフォーマンスを最適化
 
 #### Nouvelles fonctionnalités
 
-Recevoir des instructions de l'éditeur
+Les instructions de saut conditionnel utilisent le paramètre `-when`, qui prend en charge les opérateurs logiques
+
+Spine est pris en charge au niveau du moteur en tant qu'illustration
 
 #### Corrections
 
-Amélioration mineure des plantages sur les appareils iOS
+Lorsque l'ID de l'illustration ou de l'arrière-plan est un nombre pur, l'effet ne peut pas être appliqué correctement
 
-Optimisation des performances de Backlog
-
-Correction d'un bug dans le module d'animation
+Enregistrement et chargement de la carte de bégaiement
 
